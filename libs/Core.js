@@ -61,4 +61,4 @@ class CollinsMumble extends Emitter.EventEmitter {
   }
 }
 
-module.exports = Core;
+module.exports = CollinsMumble;
