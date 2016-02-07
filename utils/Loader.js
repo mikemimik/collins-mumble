@@ -2,7 +2,7 @@
 
 class Loader {
   static init(next) {
-    // console.log('>>', 'Loader', 'init', 'this:', this); // TESTING
+    console.log('>>', 'Loader', 'init', 'this:', this); // TESTING
     next(null);
   }
 
