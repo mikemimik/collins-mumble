@@ -1,0 +1,33 @@
+{
+  "name": "collins-mumble",
+  "version": "0.0.1",
+  "description": "Service-gear for Collins to connect him to mumble.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikemimik/collins-mumble.git"
+  },
+  "keywords": [
+    "service",
+    "gear",
+    "collins",
+    "bot",
+    "iot",
+    "mumble",
+    "events"
+  ],
+  "author": "Michael Perrotte",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mikemimik/collins-mumble/issues"
+  },
+  "homepage": "https://github.com/mikemimik/collins-mumble#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "lodash": "^4.2.1",
+    "mumble": "^0.3.8"
+  }
+}
