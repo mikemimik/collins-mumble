@@ -21,6 +21,9 @@ class Core extends Emitter.EventEmitter {
     this.cogs = [];
     this.actions = [];
     this._client = null;
+    this.Runtime = require('../utils/Runtime');
+
+    this.Runtime['hello'] = 'world';
   }
 
   init() {
