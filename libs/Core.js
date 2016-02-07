@@ -13,7 +13,7 @@ const _ = require('lodash');
 // INFO: npm-service-module
 const mumble = require('mumble');
 
-class Core extends Emitter.EventEmitter {
+class CollinsMumble extends Emitter.EventEmitter {
   constructor(config) {
     super();
     this.config = config;
