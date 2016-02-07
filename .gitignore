@@ -1,0 +1,8 @@
+# Dependancies
+node_modules/
+ssl/
+
+# Editor
+typings/
+jsconfig.json
+
