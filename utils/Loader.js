@@ -16,11 +16,23 @@ class Loader {
     // TODO: check config.username property
     // TODO: check config.password property
     let {server, username, password, ssl, debug} = this.config;
-    if (server === null || server === undefined) { /* emit error */ }
-    if (username === null || username === undefined) { /* emit error */ }
-    if (password === null || password === undefined) { /* emit error */ }
-    if (ssl === null || ssl === undefined) { /* connect w/o ssl */ }
+
+    // INFO: standard error cases
+    if (server === null || server === undefined) {
+      /* emit error */
+    }
+    if (username === null || username === undefined) {
+      /* emit error */
+    }
+    if (password === null || password === undefined) {
+      /* emit error */
+    }
+    if (ssl === null || ssl === undefined) {
+      if (ssl === null) { delete this.config.ssl; }
+    }
     if (debug === null || debug ===  undefined) { /* set eq false */ }
+
+    // INFO: incorrect implimentation
     next(null);
   }
   static initCogs(next) {
