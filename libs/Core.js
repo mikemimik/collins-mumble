@@ -36,6 +36,7 @@ class CollinsMumble extends Emitter.EventEmitter {
       this.initialized = true;
 
       // INFO: all the initializations have been completed
+      console.log('>>', 'TESTING', this.constructor.name, 'finished init', 'RESULT:', result);
       next(err);
     });
   }
