@@ -1,6 +1,6 @@
 {
   "name": "collins-mumble",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Service-gear for Collins to connect him to mumble.",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
   "dependencies": {
     "async": "^1.5.2",
     "lodash": "^4.2.1",
-    "mumble": "^0.3.8"
+    "mumble": "^0.3.9"
   }
 }

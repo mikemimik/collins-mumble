@@ -1,13 +1,11 @@
 'use strict';
 
-class Loader {
-  static init(next) {
-    console.log('>>', 'Loader', 'init', 'this:', this); // TESTING
-    next(null);
-  }
+// INFO: npm-service-module
+const mumble = require('mumble');
 
+class Loader {
   static initConfig(next) {
-    // console.log('>>', 'Loader', 'initConfig', 'this:', this); // TESTING
+    console.log('>>', 'CollinsMumble', 'Loader', 'initConfig', 'this:', this); // TESTING
 
     // INFO: validation specific to {npm-service-module}
     // TODO: check ssl object
@@ -35,10 +33,19 @@ class Loader {
     // INFO: incorrect implimentation
     next(null);
   }
+
+  static initGear(next) {
+    const ConnMngr = mumble.MumbleConnectionManager;
+    this.Runtime['connMngr'] = new ConnMngr(this.config.server, this.config.ssl);
+
+    next(null);
+  }
+
   static initCogs(next) {
     // console.log('>>', 'Loader', 'initCogs', 'this:', this); // TESTING
     next(null);
   }
+
   static initActions(next) {
     // console.log('>>', 'Loader', 'initActions', 'this:', this); // TESTING
     next(null);
