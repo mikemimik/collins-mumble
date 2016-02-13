@@ -35,7 +35,7 @@ class Loader {
   }
 
   static initGear(next) {
-    const ConnMngr = mumble.ConnectionManager;
+    const ConnMngr = mumble.MumbleConnectionManager;
     this.Runtime['connMngr'] = new ConnMngr(this.config.server, this.config.ssl);
 
     next(null);
