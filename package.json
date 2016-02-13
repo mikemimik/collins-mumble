@@ -1,6 +1,6 @@
 {
   "name": "collins-mumble",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Service-gear for Collins to connect him to mumble.",
   "main": "index.js",
   "scripts": {
