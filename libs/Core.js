@@ -51,12 +51,17 @@ class CollinsMumble extends Emitter.EventEmitter {
       } else {
         this.Runtime['client'] = client;
         client.authenticate(this.config.username, this.config.password);
-        client.on('initialized', Listeners.onInit.bind(this));
+
+        // TODO: make Loader.initListeners handle all of this
+        // Loader.initListeners(() => {
+        //   next(null);
+        // });
+        client.on('initialized', Listeners.initialized.bind(this));
         client.on('error', (data) => { console.log('error', data); });
-        client.on('disconnect', Listeners.onDisconn.bind(this));
-        client.on('ready', Listeners.onReady.bind(this));
-        client.on('message', _.bind(Listeners.onMessage, this, _, _, _));
-        client.on('user-connect', Listeners.onUserConn.bind(this));
+        client.on('disconnect', Listeners.disconnect.bind(this));
+        client.on('ready', Listeners.ready.bind(this));
+        client.on('message', _.bind(Listeners.message, this, _, _, _));
+        client.on('user-*', Listeners.user.bind(this));
         next(null);
       }
     };
