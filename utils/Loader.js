@@ -1,5 +1,12 @@
 'use strict';
 
+// INFO: service-gear specific modules
+const Listeners = require('../libs/Listeners');
+
+// INFO: common modules
+const async = require('async');
+const _ = require('lodash');
+
 // INFO: npm-service-module
 const mumble = require('mumble');
 
@@ -36,6 +43,7 @@ class Loader {
 
   static initGear(next) {
     const ConnMngr = mumble.MumbleConnectionManager;
+
     this.Runtime['connMngr'] = new ConnMngr(this.config.server, this.config.ssl);
 
     next(null);
@@ -46,9 +54,22 @@ class Loader {
     next(null);
   }
 
-  static initActions(next) {
+  static initListeners(next) {
     // console.log('>>', 'Loader', 'initActions', 'this:', this); // TESTING
-    next(null);
+    let listeners = Listeners.getMethods();
+    async.each(listeners, (listener, each_cb) => {
+      let check = this.Runtime['client'].on(listener, _.bind(Listeners[listener], this, _));
+      if (check === this.Runtime['client']) {
+        each_cb(null);
+      } else {
+        each_cb(true);
+      }
+    }, (err) => {
+      if (err) {
+        console.log('async.each failed while client.on() was called');
+      }
+      next(err);
+    });
   }
 }
 
