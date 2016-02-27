@@ -29,7 +29,7 @@ class CollinsMumble extends Emitter.EventEmitter {
       Loader.initConfig.bind(this),
       Loader.initGear.bind(this),
       Loader.initCogs.bind(this),
-      Loader.initActions.bind(this)
+      // Loader.initListeners.bind(this)
     ], (err, result) => {
       this.initialized = true;
 
