@@ -10,9 +10,11 @@ const _ = require('lodash');
 // INFO: npm-service-module
 const mumble = require('mumble');
 
+module.exports = Loader;
+
 class Loader {
   static initConfig(next) {
-    console.log('>>', 'CollinsMumble', 'Loader', 'initConfig', 'this:', this); // TESTING
+    // console.log('>>', 'CollinsMumble', 'Loader', 'initConfig', 'this:', this); // TESTING
 
     // INFO: validation specific to {npm-service-module}
     // TODO: check ssl object
@@ -72,5 +74,3 @@ class Loader {
     });
   }
 }
-
-module.exports = Loader;

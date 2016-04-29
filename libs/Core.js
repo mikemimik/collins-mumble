@@ -13,6 +13,8 @@ const _ = require('lodash');
 // INFO: npm-service-module
 const mumble = require('mumble');
 
+module.exports = CollinsMumble;
+
 class CollinsMumble extends Emitter.EventEmitter {
   constructor(config) {
     super();
@@ -73,5 +75,3 @@ class CollinsMumble extends Emitter.EventEmitter {
     this._client.disconnect();
   }
 }
-
-module.exports = CollinsMumble;

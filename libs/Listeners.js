@@ -1,5 +1,7 @@
 'use strict';
 
+module.exports = Listeners;
+
 class Listeners {
 
   static initialized() {}
@@ -18,5 +20,3 @@ class Listeners {
   // TODO: figure out way to map hyphens
   static user(user) {}
 }
-
-module.exports = Listeners;

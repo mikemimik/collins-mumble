@@ -1,5 +1,7 @@
 'use strict';
 
+module.exports = MumbleError;
+
 class ExtendableError extends Error {
   constructor(message) {
     super(message);
@@ -30,5 +32,3 @@ class MumbleError extends ExtendableError {
     this.message += 'See \'data\' for details.';
   }
 }
-
-module.exports = MumbleError;
